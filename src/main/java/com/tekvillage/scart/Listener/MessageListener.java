@@ -12,9 +12,10 @@ public class MessageListener {
 
 	@Autowired
 	private OrderRepository orderRepository;
-	@JmsListener(destination = "scart.queue")
+	@JmsListener(destination = "scart.queue", containerFactory="receiverFactory")
 	public void messageListener(OrderDetails order) {
 		System.out.println("Received order from Message Queue for user" + order.getUserName());
 		orderRepository.save(order);
+		System.out.println(order.getUserName() + "Order details saved into DB");
 	}
 }

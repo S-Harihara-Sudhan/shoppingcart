@@ -18,5 +18,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2'
 	
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Testframework dependencies 
+	testCompile('org.jmockit:jmockit:1.33')
+	testCompile('junit:junit:4.12')
+	testCompile('org.assertj:assertj-core:2.6.0')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
